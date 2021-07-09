@@ -1,4 +1,4 @@
-package com.walter.doggo_compose.network.httpclient
+package com.walter.doggo.network.httpclient
 
 import io.ktor.client.HttpClient
 
