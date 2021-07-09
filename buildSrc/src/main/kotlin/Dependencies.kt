@@ -45,6 +45,34 @@ object Dependencies {
         }
     }
 
+    object Compose {
+        const val COMPILER = "androidx.compose.compiler:${Version.Compose.COMPOSE_VERSION}"
+        const val UI = "androidx.compose.ui:ui:${Version.Compose.COMPOSE_VERSION}"
+
+        const val TOOLING = "androidx.compose.ui:ui-tooling:${Version.Compose.COMPOSE_VERSION}"
+        const val FOUNDATION =
+            "androidx.compose.foundation:foundation:${Version.Compose.COMPOSE_VERSION}"
+        const val MATERIAL = "androidx.compose.material:material:${Version.Compose.COMPOSE_VERSION}"
+        const val MATERIAL_ICONS =
+            "androidx.compose.material:material-icons-core:${Version.Compose.COMPOSE_VERSION}"
+        const val MATERIAL_ICONS_EXTENDED =
+            "androidx.compose.material:material-icons-extended:${Version.Compose.COMPOSE_VERSION}"
+        const val ACTIVITY = "androidx.activity:activity-compose:${Version.Compose.ACTIVITY}"
+        const val VIEW_MODEL =
+            "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.Compose.VIEW_MODEL}"
+        const val LIVE_DATA =
+            "androidx.compose.runtime:runtime-livedata:${Version.Compose.COMPOSE_VERSION}"
+        const val RXJAVA =
+            "androidx.compose.runtime:runtime-rxjava2:${Version.Compose.COMPOSE_VERSION}"
+        const val NAVIGATION =
+            "androidx.navigation:navigation-compose:${Version.Compose.NAVIGATION}"
+
+        object Test {
+            const val UI_TEST_JUNIT =
+                "androidx.compose.ui:ui-test-junit4:${Version.Compose.COMPOSE_VERSION}"
+        }
+    }
+
     object Test {
         object Unit {
             const val JUNIT = "junit:junit:4.+"

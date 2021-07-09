@@ -22,6 +22,15 @@ android {
         testInstrumentationRunner  = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerVersion = "1.5.10"
+        kotlinCompilerExtensionVersion = "1.0.0-beta09"
+    }
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
