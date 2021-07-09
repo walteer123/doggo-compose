@@ -55,6 +55,8 @@ dependencies {
     implementation(Dependencies.Koin.Ktor.MAIN)
     implementation(Dependencies.Koin.Ktor.SLF4J)
 
+    implementation(project(Modules.Network))
+
     testImplementation(Dependencies.Koin.Kotlin.TEST)
     testImplementation(Dependencies.Koin.JUnit.JUNIT4)
     testImplementation("io.insert-koin:koin-test:3.1.2")
