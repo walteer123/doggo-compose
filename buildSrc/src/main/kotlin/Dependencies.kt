@@ -46,10 +46,11 @@ object Dependencies {
     }
 
     object Compose {
-        const val COMPILER = "androidx.compose.compiler:${Version.Compose.COMPOSE_VERSION}"
+        const val COMPILER = "androidx.compose.compiler:compiler:${Version.Compose.COMPOSE_VERSION}"
         const val UI = "androidx.compose.ui:ui:${Version.Compose.COMPOSE_VERSION}"
 
-        const val TOOLING = "androidx.compose.ui:ui-tooling:${Version.Compose.COMPOSE_VERSION}"
+        //using beta tooling until android studio arctic fox RC1 is available
+        const val TOOLING = "androidx.compose.ui:ui-tooling:1.0.0-beta09"
         const val FOUNDATION =
             "androidx.compose.foundation:foundation:${Version.Compose.COMPOSE_VERSION}"
         const val MATERIAL = "androidx.compose.material:material:${Version.Compose.COMPOSE_VERSION}"
@@ -60,10 +61,6 @@ object Dependencies {
         const val ACTIVITY = "androidx.activity:activity-compose:${Version.Compose.ACTIVITY}"
         const val VIEW_MODEL =
             "androidx.lifecycle:lifecycle-viewmodel-compose:${Version.Compose.VIEW_MODEL}"
-        const val LIVE_DATA =
-            "androidx.compose.runtime:runtime-livedata:${Version.Compose.COMPOSE_VERSION}"
-        const val RXJAVA =
-            "androidx.compose.runtime:runtime-rxjava2:${Version.Compose.COMPOSE_VERSION}"
         const val NAVIGATION =
             "androidx.navigation:navigation-compose:${Version.Compose.NAVIGATION}"
 
@@ -102,6 +99,22 @@ object Dependencies {
     fun DependencyHandlerScope.commonIntegrationTest() {
         "androidTestImplementation"(Test.Integration.JUNIT)
         "androidTestImplementation"(Test.Integration.ESPRESSO_CORE)
+    }
+
+    fun DependencyHandlerScope.jetPackCompose() {
+        "implementation"(Compose.COMPILER)
+        "implementation"(Compose.UI)
+        "implementation"(Compose.TOOLING)
+        "implementation"(Compose.FOUNDATION)
+        "implementation"(Compose.MATERIAL)
+        "implementation"(Compose.MATERIAL_ICONS)
+        "implementation"(Compose.MATERIAL_ICONS_EXTENDED)
+        "implementation"(Compose.ACTIVITY)
+        "implementation"(Compose.VIEW_MODEL)
+    }
+
+    fun DependencyHandlerScope.composeTest() {
+        "testImplementation"(Compose.Test.UI_TEST_JUNIT)
     }
 
 }

@@ -9,3 +9,5 @@ dependencyResolutionManagement {
 rootProject.name = "Doggo-Compose"
 include(":app")
 include(":network")
+include(":breed")
+include(":navigation")
