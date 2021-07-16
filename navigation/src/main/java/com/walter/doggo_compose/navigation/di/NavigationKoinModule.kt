@@ -1,7 +1,10 @@
 package com.walter.doggo_compose.navigation.di
 
+import com.walter.doggo_compose.navigation.domain.manager.NavigationCollector
 import com.walter.doggo_compose.navigation.domain.manager.NavigationManager
+import com.walter.doggo_compose.navigation.domain.manager.NavigationManagerImpl
 import org.koin.core.context.loadKoinModules
+import org.koin.dsl.binds
 import org.koin.dsl.module
 
 fun injectNavigationKoinModule() = loadKoinModule
@@ -15,5 +18,8 @@ private val loadKoinModule by lazy {
 }
 
 private val managerModule = module {
-    single { NavigationManager() }
+    single { NavigationManagerImpl() } binds arrayOf(
+        NavigationManager::class,
+        NavigationCollector::class
+    )
 }

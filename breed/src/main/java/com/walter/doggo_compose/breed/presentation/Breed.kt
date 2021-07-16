@@ -14,7 +14,7 @@ fun Breed() {
     val viewModel = getViewModel<BreedViewModel>()
     val state by viewModel.state.collectAsState()
     BreedContent(state)
-
+    viewModel.getBreeds()
 }
 
 @Composable

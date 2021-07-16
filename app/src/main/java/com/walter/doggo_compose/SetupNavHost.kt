@@ -8,7 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.walter.doggo_compose.breed.presentation.Breed
 import com.walter.doggo_compose.navigation.domain.directions.NavigationDirections
-import com.walter.doggo_compose.navigation.domain.manager.NavigationManager
+import com.walter.doggo_compose.navigation.domain.manager.NavigationManagerImpl
 import org.koin.androidx.compose.get
 
 @Composable
@@ -18,7 +18,7 @@ fun SetupNavHost() {
 }
 
 @Composable
-private fun NavHostBuilder(navController: NavHostController, manager: NavigationManager = get()) {
+private fun NavHostBuilder(navController: NavHostController, manager: NavigationManagerImpl = get()) {
     NavHost(
         navController = navController,
         startDestination = NavigationDirections.breeds.destination
@@ -28,7 +28,7 @@ private fun NavHostBuilder(navController: NavHostController, manager: Navigation
         }
     }
 
-    manager.commands.collectAsState().value.also { command ->
+    manager.get().collectAsState().value?.also { command ->
         if (command.destination.isNotEmpty()) {
             navController.navigate(command.destination)
         }
