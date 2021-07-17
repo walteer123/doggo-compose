@@ -12,13 +12,15 @@ object Dependencies {
     }
 
     object Ktor {
-        const val ANDROID = "io.ktor:ktor-client-android:1.5.0"
+        const val CORE = "io.ktor:ktor-client-core:1.5.0"
+        const val CIO = "io.ktor:ktor-client-cio:1.5.0"
         const val SERIALIZATION = "io.ktor:ktor-client-serialization:1.5.0"
         const val LOGGING = "io.ktor:ktor-client-logging-jvm:1.5.0"
     }
 
     object Kotlin {
-        const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
+        const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
+        const val SERIALIZATION_CORE = "org.jetbrains.kotlinx:kotlinx-serialization-core:1.2.2"
     }
 
     object Koin {
@@ -82,6 +84,7 @@ object Dependencies {
     }
 
     fun DependencyHandlerScope.common() {
+        "implementation"(Kotlin.SERIALIZATION_CORE)
         "implementation"(Kotlin.SERIALIZATION)
         "implementation"(AndroidX.CORE)
     }
@@ -91,7 +94,8 @@ object Dependencies {
     }
 
     fun DependencyHandlerScope.commonNetwork() {
-        "implementation"(Ktor.ANDROID)
+        "implementation"(Ktor.CORE)
+        "implementation"(Ktor.CIO)
         "implementation"(Ktor.SERIALIZATION)
         "implementation"(Ktor.LOGGING)
     }
