@@ -18,9 +18,7 @@ import kotlinx.serialization.json.Json
 
 class KtorHttpClientProviderImpl : KtorHttpClientProvider {
 
-    private val timeOut = 60_000
-
-    override fun get() = HttpClient(CIO) {
+    override fun instance() = HttpClient(CIO) {
         defaultRequest {
             host = "api.thedogapi.com"
             header("x-api-key", "09c8aee5-47f2-49ff-88a7-be6c0f507338")

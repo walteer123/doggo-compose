@@ -1,5 +1,8 @@
 package com.walter.doggo_compose.breed.presentation
 
-sealed class BreedState {
-    object Loading: BreedState()
-}
+import com.walter.doggo_compose.breed.domain.entity.Breed
+
+data class BreedState(
+    val items: List<Breed>,
+    val isLoading: Boolean
+)
