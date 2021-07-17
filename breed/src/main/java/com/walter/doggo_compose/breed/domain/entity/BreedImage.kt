@@ -1,7 +1,6 @@
 package com.walter.doggo_compose.breed.domain.entity
 
-interface Breed {
+interface BreedImage {
     val id: String
-    val name: String
-    val image: BreedImage
+    val url: String
 }

@@ -47,6 +47,11 @@ object Dependencies {
         }
     }
 
+    object Coil {
+        const val CORE = "io.coil-kt:coil:1.3.0"
+        const val COMPOSE = "io.coil-kt:coil-compose:1.3.0"
+    }
+
     object Compose {
         const val COMPILER = "androidx.compose.compiler:compiler:${Version.Compose.COMPOSE_VERSION}"
         const val UI = "androidx.compose.ui:ui:${Version.Compose.COMPOSE_VERSION}"

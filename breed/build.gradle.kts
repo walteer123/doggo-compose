@@ -59,6 +59,9 @@ dependencies {
     implementation(Dependencies.Koin.Android.COMPOSE)
     implementation(Dependencies.Koin.Android.COMPOSE)
 
+    implementation(Dependencies.Coil.CORE)
+    implementation(Dependencies.Coil.COMPOSE)
+
     implementation(Dependencies.Koin.Ktor.MAIN)
     implementation(Dependencies.Koin.Ktor.SLF4J)
 
