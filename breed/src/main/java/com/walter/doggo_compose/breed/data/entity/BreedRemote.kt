@@ -9,5 +9,6 @@ import kotlinx.serialization.Serializable
 data class BreedRemote(
     @SerialName("id") override val id: String,
     @SerialName("name") override val name: String,
-    @SerialName("image") override val image: BreedImageRemote
+    @SerialName("image") override val image: BreedImageRemote,
+    @SerialName("temperament") override val temperament: String
 ) : Breed

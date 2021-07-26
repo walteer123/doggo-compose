@@ -17,13 +17,8 @@ import com.walter.doggo_compose.presentation.theme.DoggoTheme
 import org.koin.androidx.compose.get
 
 @Composable
-fun SetupNavHost() {
+fun AppRouter() {
     val navController = rememberNavController()
-    NavHostBuilder(navController)
-}
-
-@Composable
-private fun NavHostBuilder(navController: NavHostController, manager: NavigationManagerImpl = get()) {
     NavHost(
         navController = navController,
         startDestination = NavigationDirections.breeds.destination
@@ -32,7 +27,11 @@ private fun NavHostBuilder(navController: NavHostController, manager: Navigation
             Breed()
         }
     }
+    NavigationManager(navController)
+}
 
+@Composable
+private fun NavigationManager(navController: NavHostController, manager: NavigationManagerImpl = get()) {
     manager.get().collectAsState().value?.also { command ->
         if (command.destination.isNotEmpty()) {
             navController.navigate(command.destination)

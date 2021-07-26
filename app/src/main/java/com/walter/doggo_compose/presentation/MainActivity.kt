@@ -3,7 +3,8 @@ package com.walter.doggo_compose.presentation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.walter.doggo_compose.SetupNavHost
+import androidx.compose.material.Surface
+import com.walter.doggo_compose.AppRouter
 import com.walter.doggo_compose.presentation.theme.DoggoTheme
 
 class MainActivity : ComponentActivity() {
@@ -12,7 +13,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             DoggoTheme {
-                SetupNavHost()
+                Surface {
+                    AppRouter()
+                }
             }
         }
     }
