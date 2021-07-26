@@ -11,7 +11,7 @@ import kotlinx.coroutines.withContext
 
 class BreedRepositoryImpl(private val client: KtorHttpClientProvider) : BreedRepository {
 
-    override suspend fun getBreeds(): Result<List<Breed>> = runCatching {
+    override suspend fun getBreeds() = runCatching {
         withContext(Dispatchers.IO) {
             client.instance().get<List<BreedRemote>>(path = "/v1/breeds") {
                 parameter("attach_breed", 0)

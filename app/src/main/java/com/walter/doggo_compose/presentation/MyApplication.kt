@@ -1,4 +1,4 @@
-package com.walter.doggo_compose
+package com.walter.doggo_compose.presentation
 
 import android.app.Application
 import com.walter.doggo.network.di.injectNetworkModule
