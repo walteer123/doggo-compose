@@ -69,6 +69,10 @@ dependencies {
 
     implementation(project(Modules.Network))
 
+    implementation(Dependencies.Paging.RUNTIME)
+    implementation(Dependencies.Paging.COMPOSE)
+
+    testImplementation(Dependencies.Paging.Test.COMMON)
     testImplementation(Dependencies.Koin.Kotlin.TEST)
     testImplementation(Dependencies.Koin.JUnit.JUNIT4)
     commonUnitTest()

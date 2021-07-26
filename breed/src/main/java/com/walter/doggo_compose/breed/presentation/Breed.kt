@@ -9,41 +9,46 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.paging.PagingData
+import androidx.paging.compose.collectAsLazyPagingItems
+import androidx.paging.compose.items
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
 import com.walter.doggo_compose.breed.domain.entity.Breed
 import com.walter.doggo_compose.breed.domain.entity.BreedImage
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
 import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun Breed(viewModel: BreedViewModel = getViewModel()) {
     val state by viewModel.state.collectAsState()
-    BreedContent(state.items)
+    BreedContent(viewModel.breeds)
 }
 
 @Composable
-private fun BreedContent(breeds: List<Breed>) {
+private fun BreedContent(breeds: Flow<PagingData<Breed>>) {
+    val lazyBreedItems = breeds.collectAsLazyPagingItems()
     Surface {
         LazyColumn(
             contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-            items(breeds) { breed ->
-                BreedCard(breed)
+            items(lazyBreedItems) { breed ->
+                breed?.let { breedNotNull ->
+                    BreedCard(breedNotNull)
+                }
             }
         }
     }
@@ -86,7 +91,7 @@ private fun BreedCard(breed: Breed) {
 @Composable
 fun PreviewBreedContent() {
     val item = mockedBreed()
-    BreedContent(breeds = listOf(item, item))
+    BreedContent(breeds = flowOf())
 }
 
 private fun mockedBreed() = object : Breed {

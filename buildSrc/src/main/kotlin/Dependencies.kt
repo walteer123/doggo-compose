@@ -77,6 +77,15 @@ object Dependencies {
         }
     }
 
+    object Paging {
+        const val RUNTIME = "androidx.paging:paging-runtime:${Version.Paging.PAGING_VERSION}"
+        const val COMPOSE = "androidx.paging:paging-compose:${Version.Paging.PAGING_COMPOSE}"
+
+        object Test {
+            const val COMMON = "androidx.paging:paging-common:${Version.Paging.PAGING_VERSION}"
+        }
+    }
+
     object Test {
         object Unit {
             const val JUNIT = "junit:junit:4.+"
