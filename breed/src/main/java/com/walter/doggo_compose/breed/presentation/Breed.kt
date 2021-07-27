@@ -12,8 +12,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
@@ -33,7 +31,6 @@ import org.koin.androidx.compose.getViewModel
 
 @Composable
 fun Breed(viewModel: BreedViewModel = getViewModel()) {
-    val state by viewModel.state.collectAsState()
     BreedContent(viewModel.breeds)
 }
 
@@ -91,7 +88,7 @@ private fun BreedCard(breed: Breed) {
 @Composable
 fun PreviewBreedContent() {
     val item = mockedBreed()
-    BreedContent(breeds = flowOf())
+    BreedContent(breeds = flowOf(PagingData.from(listOf(item))))
 }
 
 private fun mockedBreed() = object : Breed {
