@@ -1,7 +1,7 @@
 package com.walter.doggo_compose.breed.presentation.di
 
 import com.walter.doggo_compose.breed.data.repository.BreedRepositoryImpl
-import com.walter.doggo_compose.breed.domain.BreedRepository
+import com.walter.doggo_compose.breed.domain.repository.BreedRepository
 import com.walter.doggo_compose.breed.presentation.BreedViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules

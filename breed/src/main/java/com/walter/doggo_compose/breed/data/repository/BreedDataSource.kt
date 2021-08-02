@@ -2,7 +2,7 @@ package com.walter.doggo_compose.breed.data.repository
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.walter.doggo_compose.breed.domain.BreedRepository
+import com.walter.doggo_compose.breed.domain.repository.BreedRepository
 import com.walter.doggo_compose.breed.domain.entity.Breed
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

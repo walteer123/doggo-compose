@@ -1,4 +1,4 @@
-package com.walter.doggo_compose.breed.domain
+package com.walter.doggo_compose.breed.domain.repository
 
 import com.walter.doggo_compose.breed.domain.entity.Breed
 

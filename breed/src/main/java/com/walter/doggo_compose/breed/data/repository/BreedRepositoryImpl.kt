@@ -2,7 +2,7 @@ package com.walter.doggo_compose.breed.data.repository
 
 import com.walter.doggo.network.httpclient.KtorHttpClientProvider
 import com.walter.doggo_compose.breed.data.entity.BreedRemote
-import com.walter.doggo_compose.breed.domain.BreedRepository
+import com.walter.doggo_compose.breed.domain.repository.BreedRepository
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
 import kotlinx.coroutines.Dispatchers
