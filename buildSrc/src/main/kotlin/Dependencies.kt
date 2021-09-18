@@ -56,8 +56,7 @@ object Dependencies {
         const val COMPILER = "androidx.compose.compiler:compiler:${Version.Compose.COMPOSE_VERSION}"
         const val UI = "androidx.compose.ui:ui:${Version.Compose.COMPOSE_VERSION}"
 
-        //using beta tooling until android studio arctic fox RC1 is available
-        const val TOOLING = "androidx.compose.ui:ui-tooling:1.0.0-beta09"
+        const val TOOLING = "androidx.compose.ui:ui-tooling:${Version.Compose.COMPOSE_VERSION}"
         const val FOUNDATION =
             "androidx.compose.foundation:foundation:${Version.Compose.COMPOSE_VERSION}"
         const val MATERIAL = "androidx.compose.material:material:${Version.Compose.COMPOSE_VERSION}"
